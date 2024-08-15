@@ -164,6 +164,7 @@ header {
   mix-blend-mode: difference;
   color: #fff;
   background: transparent;
+  font-family: var(--font-secondary);
   align-items: center;
   padding: 20px 3vw;
   z-index: 200;
@@ -174,8 +175,7 @@ header div {
 }
 
 .header-logo {
-  text-align: center;
-  font-size: var(--font-lg-resp);
+  margin: 0 auto;
   opacity: 1;
   transition: all var(--fast-transition);
 }
@@ -184,15 +184,17 @@ header div {
   width: clamp(70px, 8.75vw, 280px);
 }
 
-.header-logo-hide {
-  opacity: 0;
+.header-show {
   transition: all var(--fast-transition);
 }
 
-.header-menu {
-  text-align: right;
-  font-family: var(--font-secondary);
-  position: relative;
+.header-hide {
+  opacity: 0;
+  z-index: -1;
+  transition-property: opacity, z-index;
+  transition-duration: var(--fast-transition);
+  transition-timing-function: ease;
+  transition-delay: 0s, 1s;
 }
 
 .header-menu-button {

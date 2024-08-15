@@ -63,8 +63,6 @@ const Footer = () => {
       <img src={Logo} alt='Pacific' className='footer-logo' />
       <div className='bottom-footer'>
         &copy; Pacific {new Date().getFullYear()}
-        <Link to='/privacy'>Privacy</Link>
-        <Link to='/shipping'>Shipping</Link>
       </div>
       <div className={`email-pop-up ${emailOpen ? 'email-pop-up-show' : ''}`}>
         <div className='email-pop-up-container'>
