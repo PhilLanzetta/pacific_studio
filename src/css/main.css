@@ -30,6 +30,41 @@
   font-style: italic;
 }
 
+@font-face {
+  font-family: 'Neue Haas';
+  src: url(../fonts/NeueHaasGrotText-Roman.woff2) format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Haas';
+  src: url(../fonts/NeueHaasGrotText-Medium.woff2) format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Silvana';
+  src: url(../fonts/SilvanaText-Medium.woff2) format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Silvana';
+  src: url(../fonts/SilvanaText-MediumItalic.woff2) format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Silvana';
+  src: url(../fonts/SilvanaText-Bold.woff2) format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -38,7 +73,7 @@
 
 :root {
   --font-primary: 'adobe-garamond-pro', serif;
-  --font-secondary: 'Modern Gothic', sans-serif;
+  --font-secondary: 'Neue Haas', sans-serif;
   --font-xxlg-resp: clamp(36px, calc(1rem + 8.5vw), 300px);
   --font-xlg-resp: clamp(36px, calc(1rem + 5.5vw), 300px);
   --font-lg-resp: clamp(36px, calc(1rem + 2.5vw), 100px);
@@ -1189,53 +1224,34 @@ Home
   gap: var(--spacing-xs);
 }
 
-.featured-container {
-  padding: 3vw;
+.featured-tile {
+  display: block;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
 }
 
-.featured-container h2 {
-  font-style: italic;
-  font-size: var(--font-md-resp);
-  margin-bottom: var(--spacing-sm);
-}
-
-.featured-tile-container {
-  display: flex;
-  gap: var(--spacing-md);
-  flex-wrap: wrap;
-}
-
-.featured-tile-container a:hover {
+.featured-tile:hover {
   opacity: 1;
 }
 
-.featured-tile-container a h3,
-.featured-tile-container a h4 {
-  transition: all var(--fast-transition);
-}
-
-.featured-tile-container a:hover h3,
-.featured-tile-container a:hover h4 {
+.featured-tile:hover .featured-text-container {
   opacity: var(--less-opacity);
   transition: all var(--fast-transition);
 }
 
-.featured-half-page {
-  width: calc(50% - (var(--spacing-md) / 2));
-}
-
-.featured-full-page {
+.featured-image {
+  height: 100%;
   width: 100%;
 }
 
-.featured-image-full-page {
-  min-width: 100%;
-  aspect-ratio: 16 / 9;
-}
-
-.featured-image-half-page {
-  min-width: 100%;
-  aspect-ratio: 4 / 3;
+.featured-text-container {
+  position: absolute;
+  mix-blend-mode: difference;
+  color: #fff;
+  bottom: 3vw;
+  left: 3vw;
+  transition: all var(--fast-transition);
 }
 
 .featured-tile-title {
