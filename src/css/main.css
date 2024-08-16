@@ -74,6 +74,7 @@
 :root {
   --font-primary: 'adobe-garamond-pro', serif;
   --font-secondary: 'Neue Haas', sans-serif;
+  --font-accent: 'Silvana', serif;
   --font-xxlg-resp: clamp(36px, calc(1rem + 8.5vw), 300px);
   --font-xlg-resp: clamp(36px, calc(1rem + 5.5vw), 300px);
   --font-lg-resp: clamp(36px, calc(1rem + 2.5vw), 100px);
@@ -94,6 +95,7 @@
   --body-max-width: clamp(590px, 50%, 1480px);
   --lofty-line-height: 1.35;
   --primary-margin: 3vw;
+  --large-margin: 12vw;
 }
 
 html {
@@ -171,7 +173,7 @@ p {
 }
 
 .normal-margin {
-  margin: var(--primary-margin);
+  margin: var(--large-margin);
 }
 
 @media screen and (max-width: 600px) {
@@ -612,6 +614,11 @@ Case Study
   position: relative;
 }
 
+.case-scope {
+  font-size: var(--font-xs-resp);
+  text-align: center;
+}
+
 .case-scope span::after {
   content: ', ';
 }
@@ -665,8 +672,10 @@ Case Study
 }
 
 .module-text-container,
+.case-scope,
 .audio-module-container {
   width: var(--body-max-width);
+  font-family: var(--font-secondary);
   margin: 0 auto;
 }
 
@@ -676,6 +685,7 @@ Case Study
 
 .module-text-container h1 {
   text-align: center;
+  font-family: var(--font-accent);
   font-weight: 400;
   font-size: var(--font-lg-resp);
   margin-bottom: var(--spacing-lg);
@@ -866,6 +876,7 @@ CASE STUDY MEDIA
   }
 
   .module-text-container,
+  .case-scope,
   .audio-module-container {
     padding: var(--primary-margin);
   }
@@ -874,6 +885,14 @@ CASE STUDY MEDIA
   .image-module-3,
   .image-module-4 {
     width: 100%;
+  }
+
+  .normal-margin {
+    margin: var(--primary-margin);
+  }
+
+  .case-scope {
+    margin-top: -12vw;
   }
 
   .image-module-1,

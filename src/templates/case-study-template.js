@@ -1,32 +1,15 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import Content from '../components/content'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import RelatedCarousel from '../components/relatedCarousel'
-import useWindowSize from '../utils/useWindowSize'
 import { Fade } from 'react-awesome-reveal'
 
 const CaseStudy = ({ data }) => {
-  const {
-    client,
-    year,
-    location,
-    headerImage,
-    content,
-    headerText,
-    awards,
-    press,
-    shopifyHandle,
-    scope,
-    related,
-  } = data.contentfulCaseStudy
-  const { width } = useWindowSize()
-  const isMobile = width < 1111
-
-  const primaryContent = [content[0]]
-  const secondaryContent = content.slice(1)
+  const { headerImage, content, headerText, scope, related } =
+    data.contentfulCaseStudy
 
   return (
     <Layout>
@@ -66,166 +49,9 @@ const CaseStudy = ({ data }) => {
             }}
           ></div>
         )}
-        {isMobile ? (
-          <div className='case-study-body'>
-            {primaryContent && <Content content={primaryContent}></Content>}
-            <div className='case-study-left'>
-              {client && (
-                <div>
-                  <p>
-                    <em>Client</em>
-                  </p>
-                  <p>{client}</p>
-                </div>
-              )}
-              {year && (
-                <div>
-                  <p>
-                    <em>Year</em>
-                  </p>
-                  <p>{year}</p>
-                </div>
-              )}
-              {location && (
-                <div>
-                  <p>
-                    <em>Location</em>
-                  </p>
-                  <p>{location}</p>
-                </div>
-              )}
-              {scope && (
-                <div>
-                  <p>
-                    <em>Services</em>
-                  </p>
-                  <p className='case-scope'>
-                    {scope.map((item, index) => (
-                      <span key={index}>{item}</span>
-                    ))}
-                  </p>
-                </div>
-              )}
-              {awards && (
-                <div>
-                  <p>
-                    <em>Awards</em>
-                  </p>
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: awards.childMarkdownRemark.html,
-                    }}
-                  ></div>
-                </div>
-              )}
-              {press && (
-                <div className='case-study-tag-container'>
-                  <p>
-                    <em>Press</em>
-                  </p>
-                  {press.map((pressItem) => (
-                    <a
-                      href={pressItem.articleUrl}
-                      target='_blank'
-                      rel='noreferrer'
-                      key={pressItem.id}
-                    >
-                      {pressItem.publication}
-                    </a>
-                  ))}
-                </div>
-              )}
-              {shopifyHandle && (
-                <Link
-                  to={`/shop${shopifyHandle}`}
-                  className='case-study-purchase-button'
-                >
-                  Purchase
-                </Link>
-              )}
-            </div>
-            {secondaryContent && <Content content={secondaryContent}></Content>}
-          </div>
-        ) : (
-          <div className='case-study-body'>
-            <div className='case-study-left'>
-              {client && (
-                <div>
-                  <p>
-                    <em>Client</em>
-                  </p>
-                  <p>{client}</p>
-                </div>
-              )}
-              {year && (
-                <div>
-                  <p>
-                    <em>Year</em>
-                  </p>
-                  <p>{year}</p>
-                </div>
-              )}
-              {location && (
-                <div>
-                  <p>
-                    <em>Location</em>
-                  </p>
-                  <p>{location}</p>
-                </div>
-              )}
-              {scope && (
-                <div>
-                  <p>
-                    <em>Services</em>
-                  </p>
-                  <p className='case-scope'>
-                    {scope.map((item, index) => (
-                      <span key={index}>{item}</span>
-                    ))}
-                  </p>
-                </div>
-              )}
-              {awards && (
-                <div>
-                  <p>
-                    <em>Awards</em>
-                  </p>
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: awards.childMarkdownRemark.html,
-                    }}
-                  ></div>
-                </div>
-              )}
-              {press && (
-                <div className='case-study-tag-container'>
-                  <p>
-                    <em>Press</em>
-                  </p>
-                  {press.map((pressItem) => (
-                    <a
-                      href={pressItem.articleUrl}
-                      target='_blank'
-                      rel='noreferrer'
-                      key={pressItem.id}
-                    >
-                      {pressItem.publication}
-                    </a>
-                  ))}
-                </div>
-              )}
-              {shopifyHandle && (
-                <Link
-                  to={`/shop${shopifyHandle}`}
-                  className='case-study-purchase-button'
-                >
-                  Purchase
-                </Link>
-              )}
-            </div>
-            {content && <Content content={content}></Content>}
-          </div>
-        )}
+        <div className='case-study-body'>
+          {content && <Content content={content} scope={scope}></Content>}
+        </div>
       </div>
       {related && (
         <Fade triggerOnce>

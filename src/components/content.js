@@ -3,10 +3,19 @@ import ImageModule from './imageModule'
 import TextModule from './textModule'
 import VideoModule from './videoModule'
 
-const Content = ({ content }) => {
+const Content = ({ content, scope }) => {
+  const primaryContent = content[0]
+  const secondaryContent = content.slice(1)
+
   return (
     <div className='content-holder'>
-      {content.map((item) => {
+      <TextModule content={primaryContent}></TextModule>
+      <p className='case-scope'>
+        {scope.map((item, index) => (
+          <span key={index}>{item}</span>
+        ))}
+      </p>
+      {secondaryContent.map((item) => {
         if (item.imageId) {
           return <ImageModule key={item.imageId} content={item}></ImageModule>
         } else if (item.bodyTextId) {
