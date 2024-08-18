@@ -1275,12 +1275,12 @@ Home
 
 .featured-tile-title {
   margin-top: var(--spacing-xs);
+  font-style: italic;
   font-weight: normal;
 }
 
 .featured-tile-subtitle {
   font-weight: normal;
-  font-style: italic;
 }
 
 .featured-news-container {

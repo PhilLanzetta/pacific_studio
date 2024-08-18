@@ -2,14 +2,14 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Seo from '../components/seo'
 import Layout from '../components/layout'
-import FeaturedTile from '../components/featuredTile'
+import HomeTile from '../components/homeTile'
 
 const Index = ({ data, location }) => {
-  const featuredProjects = data.contentfulHomePage.featuredProjects
+  const tiles = data.contentfulStudioHome.tiles
   return (
     <Layout location={location}>
-      {featuredProjects.map((project) => (
-        <FeaturedTile key={project.id} project={project}></FeaturedTile>
+      {tiles.map((tile) => (
+        <HomeTile key={tile.id} project={tile}></HomeTile>
       ))}
     </Layout>
   )
@@ -17,18 +17,24 @@ const Index = ({ data, location }) => {
 
 export const query = graphql`
   query {
-    contentfulHomePage {
-      featuredProjects {
+    contentfulStudioHome {
+      tiles {
         id
-        featuredImage {
-          gatsbyImageData
-          description
-        }
         caseStudy {
           title
           subtitle
           slug
         }
+        tileImage {
+          gatsbyImageData
+          description
+        }
+        videoPosterImage {
+          gatsbyImageData
+          description
+        }
+        type
+        vimeoId
       }
     }
   }
