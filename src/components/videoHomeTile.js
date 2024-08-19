@@ -17,7 +17,7 @@ const VideoHomeTile = ({ project }) => {
   }, [isOnScreen])
 
   return (
-    <div className='video-module' ref={elementRef}>
+    <div className='video-tile' ref={elementRef}>
       <AnimatePresence>
         {isLoading && (
           <motion.div

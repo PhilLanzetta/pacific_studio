@@ -1283,6 +1283,12 @@ Home
   font-weight: normal;
 }
 
+.video-tile {
+  height: 100%;
+  width: 100%;
+  background: #000;
+}
+
 .featured-news-container {
   width: 100%;
   position: relative;
