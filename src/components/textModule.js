@@ -7,7 +7,7 @@ const TextModule = ({ content }) => {
       <div
         className='module-text-container'
         dangerouslySetInnerHTML={{
-          __html: content.text.childMarkdownRemark.html,
+          __html: content.text?.childMarkdownRemark.html,
         }}
       ></div>
     </Fade>
