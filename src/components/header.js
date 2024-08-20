@@ -6,7 +6,7 @@ import Logo from '../images/logo.svg'
 const Header = () => {
   return (
     <HideOnScroll>
-        <Link to='/about'>Information</Link>
+        <Link to='/info'>Information</Link>
         <Link to='/' className='header-logo'>
           <img src={Logo} alt='Pacific'></img>
         </Link>

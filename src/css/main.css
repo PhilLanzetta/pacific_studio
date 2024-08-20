@@ -2262,3 +2262,166 @@ PRODUCTS MEDIA
   height: 100vh;
   gap: var(--spacing-sm);
 }
+
+.info-container {
+  display: flex;
+  margin: var(--primary-margin);
+  padding-top: 120px;
+  justify-content: space-between;
+}
+
+.info-column {
+  width: 46%;
+  font-family: var(--font-accent);
+  line-height: var(--lofty-line-height);
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-heading,
+.info-contact-heading {
+  font-family: var(--font-secondary);
+  margin-bottom: 20px;
+}
+
+.info-right-column,
+.info-right-column p {
+  font-size: calc(var(--font-xs-resp) + 2px);
+}
+
+.info-right-column {
+  width: 32%;
+}
+
+.info-list {
+  list-style: none;
+  margin-bottom: 80px;
+}
+
+.info-list ul {
+  list-style: none;
+}
+
+.info-list p {
+  margin-bottom: 20px;
+}
+
+.info-left-column {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 80px;
+}
+
+.info-contact,
+.info-contact p {
+  font-size: var(--font-xs-resp);
+}
+
+.info-contact {
+  display: flex;
+  gap: 80px;
+}
+
+.info-contact a {
+  display: block;
+}
+
+@media screen and (max-width: 1100px) {
+  .info-container {
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  .info-column {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .info-column {
+    flex-direction: column;
+  }
+
+  .info-right-column {
+    width: 100%;
+  }
+
+  .info-contact {
+  gap: 0;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+}
+
+.video-controls {
+  position: absolute;
+  padding: 10px 15px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.controls-container {
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.controls-container > div {
+  width: 33%;
+}
+
+.seek-and-play-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.seek-and-play-controls img {
+  cursor: pointer;
+}
+
+.seek-and-play-controls img:hover {
+  opacity: 0.5;
+  transition: all 300ms;
+}
+
+.sound-container {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.controls-hide {
+  opacity: 0;
+  transition: all 700ms;
+}
+
+.controls-show {
+  opacity: 1;
+  transition: all 700ms;
+}
+
+.full-screen-btn {
+  position: absolute;
+  z-index: 150;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.full-screen-btn:hover {
+  opacity: 0.5;
+  transition: all 300ms;
+}
+
+.video-play-pause-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 90%;
+  width: 100%;
+  z-index: 100;
+  cursor: pointer;
+}
