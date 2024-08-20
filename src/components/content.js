@@ -11,7 +11,7 @@ const Content = ({ content, scope }) => {
     <div className='content-holder'>
       <TextModule content={primaryContent}></TextModule>
       <p className='case-scope'>
-        {scope.map((item, index) => (
+        {scope?.map((item, index) => (
           <span key={index}>{item}</span>
         ))}
       </p>
