@@ -1,16 +1,20 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import HideOnScroll from './hideOnScroll'
 import Logo from '../images/logo.svg'
 
 const Header = () => {
   return (
-    <HideOnScroll>
+    <header>
+      <div>
         <Link to='/info'>Information</Link>
-        <Link to='/' className='header-logo'>
+      </div>
+      <div className='header-logo'>
+        <Link to='/'>
           <img src={Logo} alt='Pacific'></img>
         </Link>
-    </HideOnScroll>
+      </div>
+      <div></div>
+    </header>
   )
 }
 

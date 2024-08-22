@@ -22,6 +22,7 @@ const HomeTile = ({ project }) => {
         )}
         <div className='featured-text-container'>
           <h3 className='featured-tile-title'>{title}</h3>
+          <br />
           <h4 className='featured-tile-subtitle'>{subtitle}</h4>
         </div>
       </Link>
