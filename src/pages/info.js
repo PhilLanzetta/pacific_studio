@@ -91,7 +91,7 @@ const Info = ({ data }) => {
           <div className='info-right-column'>
             <p className='info-heading'>Select Press & Interviews</p>
             <div
-              className='info-list'
+              className='info-list talks-lectures'
               dangerouslySetInnerHTML={{
                 __html: talksLectures.childMarkdownRemark.html,
               }}

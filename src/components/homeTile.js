@@ -20,7 +20,10 @@ const HomeTile = ({ project }) => {
         {project.type === 'Video' && (
           <VideoHomeTile project={project}></VideoHomeTile>
         )}
-        <div className='featured-text-container'>
+        <div
+          className='featured-text-container'
+          style={{ color: project.fontColor }}
+        >
           <h3 className='featured-tile-title'>{title}</h3>
           <br />
           <h4 className='featured-tile-subtitle'>{subtitle}</h4>
