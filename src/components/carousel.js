@@ -1,4 +1,3 @@
-import { Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import React, { useRef } from 'react'
 import Slider from 'react-slick'
@@ -11,28 +10,30 @@ const Carousel = ({ data, slideCount }) => {
 
   const settings = {
     slidesToShow: slideCount,
-    infinite: false,
+    infinite: true,
     useTransform: false,
     dots: false,
     arrows: false,
-    responsive: [
-      {
-        breakpoint: 920,
-        settings: {
-          slidesToShow: 1.15,
-        },
-      },
-    ],
+    autoplay: true,
   }
 
   return (
     <>
-      <div className='pub-carousel-heading'>
-        <Link to='/publishing'>
-          <h2>Recent Publications</h2>
-        </Link>
+      <div className='normal-margin'>
+        <Slider {...settings} ref={slideRef}>
+          {data.map((image) => (
+            <div key={image.id} className='carousel-link'>
+              <GatsbyImage
+                className='carousel-image'
+                image={image.image.gatsbyImageData}
+                alt={image.image.description}
+              ></GatsbyImage>
+              <p className='image-caption'>{image.caption}</p>
+            </div>
+          ))}
+        </Slider>
         {width > 600 && (
-          <div className='pub-arrows-container'>
+          <div className='carousel-arrows-container'>
             <button
               className='pub-arrow'
               onClick={() => slideRef.current.slickPrev()}
@@ -50,21 +51,6 @@ const Carousel = ({ data, slideCount }) => {
           </div>
         )}
       </div>
-      <Slider {...settings} ref={slideRef}>
-        {data.map((pub) => (
-          <div key={pub.id} className='carousel-link'>
-            <GatsbyImage
-              className='carousel-image'
-              image={pub.featuredImage.gatsbyImageData}
-              alt={pub.featuredImage.description}
-            ></GatsbyImage>
-            <Link to={`/studio/${pub.caseStudy.slug}`}>
-              <p className='carousel-title'>{pub.caseStudy.title}</p>
-              <p className='carousel-subtitle'>{pub.caseStudy.subtitle}</p>
-            </Link>
-          </div>
-        ))}
-      </Slider>
     </>
   )
 }

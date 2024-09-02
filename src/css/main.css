@@ -95,7 +95,7 @@
   --body-max-width: clamp(590px, 50%, 1480px);
   --lofty-line-height: 1.35;
   --primary-margin: 3vw;
-  --large-margin: 12vw;
+  --large-margin: 3vw 12vw;
 }
 
 html {
@@ -618,6 +618,7 @@ Case Study
 .case-scope {
   font-size: var(--font-xs-resp);
   text-align: center;
+  padding-bottom: 3vw;
 }
 
 .case-scope span::after {
@@ -690,6 +691,11 @@ Case Study
   font-weight: 400;
   font-size: var(--font-lg-resp);
   margin-bottom: var(--spacing-lg);
+}
+
+.primary-text-container {
+  text-align: center;
+  line-height: 1.5;
 }
 
 .audio-module-container {
@@ -792,6 +798,12 @@ Case Study
 
 .image-module-4 {
   width: 23%;
+}
+
+.image-caption {
+  font-family: var(--font-secondary);
+  font-size: var(--font-xs-resp);
+  padding-top: 5px;
 }
 
 .video-module {
@@ -1361,9 +1373,10 @@ Home
   align-items: center;
 }
 
-.pub-arrows-container {
+.carousel-arrows-container {
   display: flex;
-  gap: var(--spacing-sm);
+  width: 100%;
+  justify-content: space-between;
 }
 
 .pub-arrow svg {
@@ -1719,14 +1732,6 @@ PRESS
   font-size: var(--font-xs-resp);
 }
 
-.carousel-image {
-  aspect-ratio: 1.5 / 2;
-  margin-bottom: var(--spacing-xs);
-}
-
-.carousel-link {
-  padding-right: var(--spacing-sm);
-}
 
 .carousel-subtitle {
   font-style: italic;

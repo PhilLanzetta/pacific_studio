@@ -129,6 +129,7 @@ export const query = graphql`
           imageId: id
           columns
           fullBleed
+          isACarousel
           images {
             caption
             id

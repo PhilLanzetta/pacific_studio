@@ -9,7 +9,7 @@ const Content = ({ content, scope }) => {
 
   return (
     <div className='content-holder'>
-      <TextModule content={primaryContent}></TextModule>
+      <TextModule primary content={primaryContent}></TextModule>
       <p className='case-scope'>
         {scope?.map((item, index) => (
           <span key={index}>{item}</span>

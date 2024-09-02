@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import ReactPlayer from 'react-player'
 import Control from './control'
 import { formatTime } from '../utils/formatTime'
@@ -7,6 +7,7 @@ import small from '../images/smallScreen.svg'
 import screenfull from 'screenfull'
 import useWindowSize from '../utils/useWindowSize'
 import { Fade } from 'react-awesome-reveal'
+import useOnScreen from '../utils/useOnScreen'
 
 let count = 0
 
@@ -15,20 +16,33 @@ const VideoModule = ({ content }) => {
   const videoPlayerRef = useRef(null)
   const controlRef = useRef(null)
   const fullScreenRef = useRef(null)
+  const elementRef = useRef(null)
+  const isOnScreen = useOnScreen(elementRef)
 
   const [videoState, setVideoState] = useState({
     playing: false,
-    muted: false,
-    volume: 1,
+    muted: true,
+    volume: 0,
     playbackRate: 1.0,
     played: 0,
+    playsinline: true,
     seeking: false,
   })
+
+  const [userInteraction, setUserInteraction] = useState(false)
 
   const [fullScreenState, setFullScreenState] = useState(false)
 
   const { width, height } = useWindowSize()
   const isMobile = height > width ? width < 769 : width < 900
+
+  useEffect(() => {
+    if (isOnScreen && !userInteraction) {
+      setVideoState({ ...videoState, playing: true })
+    } else {
+      setVideoState({ ...videoState, playing: false })
+    }
+  }, [isOnScreen])
 
   //Destructuring the properties from the videoState
   const { playing, muted, volume, playbackRate, played, seeking } = videoState
@@ -45,11 +59,13 @@ const VideoModule = ({ content }) => {
 
   const playPauseHandler = () => {
     //plays and pause the video (toggling)
+    setUserInteraction(true)
     setVideoState({ ...videoState, playing: !videoState.playing })
   }
 
   const rewindHandler = () => {
     //Rewinds the video player reducing 5
+    setUserInteraction(true)
     if (videoPlayerRef.current.getCurrentTime() > 5) {
       videoPlayerRef.current.seekTo(videoPlayerRef.current.getCurrentTime() - 5)
     } else {
@@ -59,6 +75,7 @@ const VideoModule = ({ content }) => {
 
   const handleFastFoward = () => {
     //FastFowards the video player by adding 5
+    setUserInteraction(true)
     videoPlayerRef.current.seekTo(videoPlayerRef.current.getCurrentTime() + 5)
   }
 
@@ -76,16 +93,19 @@ const VideoModule = ({ content }) => {
   }
 
   const seekHandler = (e, value) => {
+    setUserInteraction(true)
     setVideoState({ ...videoState, played: parseFloat(value / 100) })
     videoPlayerRef.current.seekTo(parseFloat(value / 100))
   }
 
   const seekMouseUpHandler = (e, value) => {
+    setUserInteraction(true)
     setVideoState({ ...videoState, seeking: false })
     videoPlayerRef.current.seekTo(value / 100)
   }
 
   const volumeChangeHandler = (e, value) => {
+    setUserInteraction(true)
     const newVolume = parseFloat(value) / 100
 
     setVideoState({
@@ -96,6 +116,7 @@ const VideoModule = ({ content }) => {
   }
 
   const volumeSeekUpHandler = (e, value) => {
+    setUserInteraction(true)
     const newVolume = parseFloat(value) / 100
 
     setVideoState({
@@ -106,11 +127,13 @@ const VideoModule = ({ content }) => {
   }
 
   const muteHandler = () => {
+    setUserInteraction(true)
     //Mutes the video player
     setVideoState({ ...videoState, muted: !videoState.muted })
   }
 
   const onSeekMouseDownHandler = (e) => {
+    setUserInteraction(true)
     setVideoState({ ...videoState, seeking: true })
   }
 
@@ -142,6 +165,7 @@ const VideoModule = ({ content }) => {
           className='video-module'
           onMouseMove={isMobile ? null : mouseMoveHandler}
           key={isMobile}
+          ref={elementRef}
         >
           <ReactPlayer
             url={videoLink}
