@@ -2,11 +2,17 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Logo from '../images/logo.svg'
 
-const Header = () => {
+const Header = ({ location }) => {
+  console.log(location)
+  const info = location?.pathname === '/info/'
   return (
     <header>
       <div>
-        <Link to='/info'>Information</Link>
+        {info ? (
+          <Link to='/'>Close</Link>
+        ) : (
+          <Link to='/info'>Information</Link>
+        )}
       </div>
       <div className='header-logo'>
         <Link to='/'>

@@ -3,11 +3,11 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 
-const Info = ({ data }) => {
+const Info = ({ data, location }) => {
   const { aboutText, awards, brandingServices, talksLectures, selectClients } =
     data.contentfulAboutPage
   return (
-    <Layout>
+    <Layout location={location}>
       <div className='info-container'>
         <div className='info-column info-left-column'>
           <div

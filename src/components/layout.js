@@ -2,10 +2,10 @@ import React from 'react'
 import Header from './header'
 import Footer from './footer'
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   return (
     <>
-      <Header></Header>
+      <Header location={location}></Header>
       <main>{children}</main>
       <Footer></Footer>
     </>
