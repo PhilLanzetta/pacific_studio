@@ -1,15 +1,12 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Fade } from 'react-awesome-reveal'
 import VideoHomeTile from './videoHomeTile'
 
 const HomeTile = ({ project }) => {
-  const { slug, title, subtitle } = project.caseStudy
-
   return (
     <Fade triggerOnce>
-      <Link to={`/${slug}`} className='featured-tile'>
+      <div className='featured-tile'>
         {project.type === 'Image' && (
           <GatsbyImage
             image={project.tileImage.gatsbyImageData}
@@ -23,12 +20,11 @@ const HomeTile = ({ project }) => {
         <div
           className='featured-text-container'
           style={{ color: project.fontColor }}
-        >
-          <h3 className='featured-tile-title'>{title}</h3>
-          <br />
-          <h4 className='featured-tile-subtitle'>{subtitle}</h4>
-        </div>
-      </Link>
+          dangerouslySetInnerHTML={{
+            __html: project.tileText?.childMarkdownRemark?.html,
+          }}
+        ></div>
+      </div>
     </Fade>
   )
 }

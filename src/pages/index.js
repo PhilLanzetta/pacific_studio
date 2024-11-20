@@ -20,11 +20,6 @@ export const query = graphql`
     contentfulStudioHome {
       tiles {
         id
-        caseStudy {
-          title
-          subtitle
-          slug
-        }
         tileImage {
           gatsbyImageData
           description
@@ -35,6 +30,11 @@ export const query = graphql`
         }
         type
         fontColor
+        tileText {
+          childMarkdownRemark {
+            html
+          }
+        }
         vimeoId
       }
     }
