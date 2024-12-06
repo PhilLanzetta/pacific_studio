@@ -105,7 +105,7 @@ const Info = ({ data, location }) => {
 
 export const query = graphql`
   query {
-    contentfulAboutPage {
+    contentfulAboutPage(title: { eq: "Studio About Page" }) {
       aboutText {
         childMarkdownRemark {
           html
