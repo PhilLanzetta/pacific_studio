@@ -27,8 +27,8 @@ const VideoHomeTile = ({ project }) => {
             className='video-poster'
           >
             <GatsbyImage
-              image={project.videoPosterImage.gatsbyImageData}
-              alt={project.videoPosterImage.description}
+              image={project.videoPosterImage?.gatsbyImageData}
+              alt={project.videoPosterImage?.description}
               className='poster-image'
             ></GatsbyImage>
           </motion.div>
