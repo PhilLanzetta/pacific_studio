@@ -24,6 +24,14 @@ export const query = graphql`
           gatsbyImageData
           description
         }
+        mobileTileImage {
+          gatsbyImageData
+          description
+        }
+        mobilePosterImage {
+          gatsbyImageData
+          description
+        }
         videoPosterImage {
           gatsbyImageData
           description
@@ -36,6 +44,7 @@ export const query = graphql`
           }
         }
         vimeoId
+        mobileVimeoId
       }
     }
   }
