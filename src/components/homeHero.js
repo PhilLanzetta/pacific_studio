@@ -3,10 +3,10 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import useOnScreen from '../utils/useOnScreen'
 import ReactPlayer from 'react-player'
+import useWindowSize from '../utils/useWindowSize'
 
 const HomeHero = ({ videoId, poster }) => {
-  const [width, setWidth] = useState('100vw')
-  const [height, setHeight] = useState('100vh')
+  const { height, width } = useWindowSize()
   const [playing, setPlaying] = useState(0)
   const [isLoading, setIsLoading] = useState(true)
   const elementRef = useRef(null)
@@ -20,24 +20,6 @@ const HomeHero = ({ videoId, poster }) => {
     }
   }, [isOnScreen])
 
-  useEffect(() => {
-    setWidth(window.innerWidth)
-    setHeight(window.innerHeight)
-  }, [])
-
-  useEffect(() => {
-    const handleWindowResize = () => {
-      if (window.innerWidth > 600) {
-        setWidth(window.innerWidth)
-        setHeight(window.innerHeight)
-      } else {
-        setWidth(window.innerWidth)
-      }
-    }
-    window.addEventListener('resize', handleWindowResize)
-
-    return () => window.removeEventListener('resize', handleWindowResize)
-  }, [])
 
   const minHorizontalHeight = (width / 9) * 16
 
