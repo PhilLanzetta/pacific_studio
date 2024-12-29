@@ -78,6 +78,8 @@ const HomeHero = ({ videoId, poster }) => {
                 ? { minHeight: height, minWidth: minVerticalWidth }
                 : { minHeight: minVerticalHeight, minWidth: width }
             }
+            height={height / width >= 1.77 ? height : minVerticalHeight}
+            width={height / width >= 1.77 ? minVerticalWidth : width}
             url={`https://player.vimeo.com/video/${videoId}`}
             controls={false}
             playing={playing}
@@ -98,6 +100,8 @@ const HomeHero = ({ videoId, poster }) => {
                 ? { minHeight: height, minWidth: minHorizontalWidth }
                 : { minHeight: minHorizontalHeight, minWidth: width }
             }
+            height={height / width >= 0.56 ? height : minHorizontalHeight}
+            width={height / width >= 0.56 ? minHorizontalWidth : width}
             url={`https://player.vimeo.com/video/${videoId}`}
             controls={false}
             playing={playing}
