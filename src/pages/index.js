@@ -21,19 +21,19 @@ export const query = graphql`
       tiles {
         id
         tileImage {
-          gatsbyImageData
+          gatsbyImageData(layout: FULL_WIDTH)
           description
         }
         mobileTileImage {
-          gatsbyImageData
+          gatsbyImageData(layout: FULL_WIDTH)
           description
         }
         mobilePosterImage {
-          gatsbyImageData
+          gatsbyImageData(layout: FULL_WIDTH)
           description
         }
         videoPosterImage {
-          gatsbyImageData
+          gatsbyImageData(layout: FULL_WIDTH)
           description
         }
         type
