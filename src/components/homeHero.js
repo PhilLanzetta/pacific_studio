@@ -73,11 +73,14 @@ const HomeHero = ({ videoId, poster }) => {
           style={{ height: height, width: width }}
         >
           <ReactPlayer
-            style={
-              height / width >= 1.77
-                ? { minHeight: height, minWidth: minVerticalWidth }
-                : { minHeight: minVerticalHeight, minWidth: width }
-            }
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              objectFit: 'cover',
+              opacity: 1,
+            }}
             height={height / width >= 1.77 ? height : minVerticalHeight}
             width={height / width >= 1.77 ? minVerticalWidth : width}
             url={`https://player.vimeo.com/video/${videoId}`}
@@ -95,11 +98,14 @@ const HomeHero = ({ videoId, poster }) => {
           style={{ height: height, width: width }}
         >
           <ReactPlayer
-            style={
-              height / width >= 0.56
-                ? { minHeight: height, minWidth: minHorizontalWidth }
-                : { minHeight: minHorizontalHeight, minWidth: width }
-            }
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              objectFit: 'cover',
+              opacity: 1,
+            }}
             height={height / width >= 0.56 ? height : minHorizontalHeight}
             width={height / width >= 0.56 ? minHorizontalWidth : width}
             url={`https://player.vimeo.com/video/${videoId}`}
