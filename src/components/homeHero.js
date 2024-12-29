@@ -3,7 +3,6 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import useOnScreen from '../utils/useOnScreen'
 import ReactPlayer from 'react-player'
-import useWindowSize from '../utils/useWindowSize'
 
 const HomeHero = ({ videoId, poster }) => {
   const isSSR = typeof window !== 'undefined'
