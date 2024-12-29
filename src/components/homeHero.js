@@ -6,8 +6,12 @@ import ReactPlayer from 'react-player'
 import useWindowSize from '../utils/useWindowSize'
 
 const HomeHero = ({ videoId, poster }) => {
-  const { height, width } = useWindowSize()
-  const [playing, setPlaying] = useState(0)
+  const isSSR = typeof window !== 'undefined'
+  const [width, setWidth] = useState(isSSR ? window.innerWidth : 1200)
+  const [height, setHeight] = useState(
+    isSSR ? (width < 700 ? window.outerHeight : window.innerHeight) : 800
+  )
+  const [playing, setPlaying] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const elementRef = useRef(null)
   const isOnScreen = useOnScreen(elementRef)
@@ -20,6 +24,19 @@ const HomeHero = ({ videoId, poster }) => {
     }
   }, [isOnScreen])
 
+  useEffect(() => {
+    const handleWindowResize = () => {
+      if (window.innerWidth > 700) {
+        setWidth(window.innerWidth)
+        setHeight(window.innerHeight)
+      } else {
+        setWidth(window.innerWidth)
+      }
+    }
+    window.addEventListener('resize', handleWindowResize)
+
+    return () => window.removeEventListener('resize', handleWindowResize)
+  }, [])
 
   const minHorizontalHeight = (width / 9) * 16
 
