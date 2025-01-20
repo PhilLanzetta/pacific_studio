@@ -1209,10 +1209,14 @@ Home
 
 .hero-container {
   overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
 
 .hero-video-container {
   position: relative;
+  height: 100%;
+  width: 100%;
   background: #000;
 }
 
@@ -1256,14 +1260,25 @@ Home
   gap: var(--spacing-xs);
 }
 
-.featured-tile {
+.featured-tile-portrait {
   display: block;
   position: relative;
-  height: 100vh;
   width: 100vw;
+  aspect-ratio: 9 / 16;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
-.featured-tile:hover {
+.featured-tile-landscape {
+  display: block;
+  position: relative;
+  width: 100vw;
+  aspect-ratio: 16 / 9;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.featured-tile-portrait:hover, .featured-tile-landscape:hover {
   opacity: 1;
 }
 
@@ -1293,8 +1308,11 @@ Home
 }
 
 .featured-image {
-  height: 100%;
   width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .featured-text-container {
@@ -2300,7 +2318,7 @@ PRODUCTS MEDIA
 
 .info-column {
   width: 46%;
-  font-family: var(--font-accent);
+  font-family: 'adobe-garamond-pro', serif;
   line-height: var(--lofty-line-height);
   display: flex;
   justify-content: space-between;

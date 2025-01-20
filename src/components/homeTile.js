@@ -10,7 +10,7 @@ const HomeTile = ({ project }) => {
   const isLandscape = height < width
   return (
     <Fade triggerOnce>
-      <div className='featured-tile'>
+      <div className={isLandscape ? 'featured-tile-landscape' : 'featured-tile-portrait'}>
         {isLandscape && project.tileImage && (
           <GatsbyImage
             image={project.tileImage.gatsbyImageData}
@@ -29,6 +29,7 @@ const HomeTile = ({ project }) => {
           <HomeHero
             videoId={project.vimeoId}
             poster={project.videoPosterImage}
+            landscape={true}
           ></HomeHero>
         )}
         {!isLandscape && project.mobileVimeoId && (

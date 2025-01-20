@@ -20,13 +20,12 @@ const Info = ({ data, location }) => {
             <div>
               <p className='info-contact-heading'>Office</p>
               <a
-                href='https://maps.app.goo.gl/tx9VpgZexeT4MMAB8'
+                href='https://maps.app.goo.gl/8vXst9aKP9nn7rJu5'
                 target='_blank'
                 rel='noreferrer'
               >
-                New York <br />
-                70 Flushing Avenue <br />
-                Brooklyn, NY 11205
+                <p>161 Water St, Suite 2203</p>
+                <p>New York, NY 10038</p>
               </a>
             </div>
             <div>
@@ -67,14 +66,6 @@ const Info = ({ data, location }) => {
                 ))}
               </ul>
             </div>
-            <div>
-              <p className='info-heading'>Awards</p>
-              <ul className='info-list'>
-                {awards.map((award, index) => (
-                  <li key={index}>{award}</li>
-                ))}
-              </ul>
-            </div>
           </div>
           <div className='info-right-column'>
             <p className='info-heading'>Select Clients</p>
@@ -89,7 +80,7 @@ const Info = ({ data, location }) => {
             ></ul>
           </div>
           <div className='info-right-column'>
-            <p className='info-heading'>Select Press & Interviews</p>
+            <p className='info-heading'>Awards</p>
             <div
               className='info-list talks-lectures'
               dangerouslySetInnerHTML={{

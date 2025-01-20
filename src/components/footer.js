@@ -51,13 +51,10 @@ const Footer = () => {
           </p>
           <p>business@pacificpacific.pub</p>
         </a>
-        <a
-          href='https://maps.app.goo.gl/8vXst9aKP9nn7rJu5'
-          target='_blank'
-          rel='noreferrer'
-        >
-          <p>161 Water St, Suite 2203</p>
-          <p>New York, NY 10038</p>
+        <a href='https://pacificpacific.pub' target='_blank' rel='noreferrer'>
+          <p>
+            <em>Publishing</em>
+          </p>
         </a>
       </div>
       <img src={Logo} alt='Pacific' className='footer-logo' />
