@@ -1307,9 +1307,18 @@ Home
   transition: var(--fast-transition);
 }
 
-.featured-image {
-  min-width: 100%;
-  min-height: 100%;
+.featured-image-landscape {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.featured-image-portrait {
+  width: 100%;
+  aspect-ratio: 9 / 16;
   position: absolute;
   top: 50%;
   left: 50%;

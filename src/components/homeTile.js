@@ -15,14 +15,14 @@ const HomeTile = ({ project }) => {
           <GatsbyImage
             image={project.tileImage.gatsbyImageData}
             alt={project.tileImage.description}
-            className='featured-image'
+            className='featured-image-landscape'
           ></GatsbyImage>
         )}
         {!isLandscape && project.mobileTileImage && (
           <GatsbyImage
             image={project.mobileTileImage.gatsbyImageData}
             alt={project.mobileTileImage.description}
-            className='featured-image'
+            className='featured-image-portrait'
           ></GatsbyImage>
         )}
         {isLandscape && project.vimeoId && (
