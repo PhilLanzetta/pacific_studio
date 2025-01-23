@@ -2321,7 +2321,7 @@ PRODUCTS MEDIA
 }
 
 .info-text p {
-  font-size: calc(var(--font-sm-resp) + 2px);
+  font-size: calc(var(--font-sm-resp) * 1.5);
 }
 
 .info-column {
