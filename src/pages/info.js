@@ -37,11 +37,11 @@ const Info = ({ data, location }) => {
                 business@pacificpacific.pub
               </a>
               <a
-                href='https://www.instagram.com/pacific_pacific'
+                href='https://www.instagram.com/studio__pacific'
                 target='_blank'
                 rel='noreferrer'
               >
-                Instagram: pacific_pacific
+                Instagram: studio__pacific
               </a>
             </div>
             <div>
@@ -51,7 +51,7 @@ const Info = ({ data, location }) => {
                 target='_blank'
                 rel='noreferrer'
               >
-                pacificpacific.pub
+                www.pacificpacific.pub
               </a>
             </div>
           </div>

@@ -32,7 +32,7 @@ const CustomForm = ({ status, message, onValidated, setEmailOpen }) => {
       {status !== 'sending' && status !== 'error' && status !== 'success' && (
         <h3 className='email-pop-up-text'>
           Receive our monthly newsletter,
-          <br /> event information and more!
+          <br /> event information and more.
         </h3>
       )}
       {status === 'success' && (
