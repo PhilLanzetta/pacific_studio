@@ -30,12 +30,14 @@ const HomeTile = ({ project }) => {
             videoId={project.vimeoId}
             poster={project.videoPosterImage}
             landscape={true}
+            fontColor={project.fontColor}
           ></HomeHero>
         )}
         {!isLandscape && project.mobileVimeoId && (
           <HomeHero
             videoId={project.mobileVimeoId}
             poster={project.mobilePosterImage}
+            fontColor={project.fontColor}
           ></HomeHero>
         )}
         <div

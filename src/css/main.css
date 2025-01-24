@@ -1220,15 +1220,7 @@ Home
   background: #000;
 }
 
-.hero-container iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
-  border: none;
-}
+
 
 .home-about-preview {
   display: flex;
@@ -1328,6 +1320,19 @@ Home
   bottom: 3vw;
   left: 3vw;
   transition: all var(--fast-transition);
+}
+.home-muted-button {
+  position: absolute;
+  right: 3vw;
+  bottom: 3vw;
+  height: clamp(10px, 2vw, 40px);
+  width: clamp(10px, 2vw, 40px);
+  z-index: 100;
+}
+
+.home-muted-button svg {
+  height: 100%;
+  width: 100%;
 }
 
 .featured-tile-title {
