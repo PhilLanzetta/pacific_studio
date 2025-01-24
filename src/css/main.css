@@ -1211,6 +1211,7 @@ Home
   overflow: hidden;
   height: 100%;
   width: 100%;
+  position: relative;
 }
 
 .hero-video-container {
@@ -1325,8 +1326,8 @@ Home
   position: absolute;
   right: 3vw;
   bottom: 3vw;
-  height: clamp(10px, 2vw, 40px);
-  width: clamp(10px, 2vw, 40px);
+  height: clamp(15px, 2vw, 40px);
+  width: clamp(15px, 2vw, 40px);
   z-index: 100;
 }
 
