@@ -4,7 +4,7 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import useOnScreen from '../utils/useOnScreen'
 import ReactPlayer from 'react-player'
 
-const HomeHero = ({ videoId, poster, landscape, fontColor }) => {
+const HomeHero = ({ videoId, poster, landscape, fontColor, sound }) => {
   const [playing, setPlaying] = useState(false)
   const [muted, setMuted] = useState(true)
   const [isLoading, setIsLoading] = useState(true)
@@ -61,43 +61,45 @@ const HomeHero = ({ videoId, poster, landscape, fontColor }) => {
           onError={() => setIsLoading(true)}
         ></ReactPlayer>
       </div>
-      <button
-        onClick={() => setMuted(!muted)}
-        className='home-muted-button'
-        style={{ color: fontColor }}
-      >
-        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10.906 14.541'>
-          <g id='Group_61' data-name='Group 61' transform='translate(0)'>
-            <path
-              id='Path_2'
-              data-name='Path 2'
-              d='M-3496-19960.061h3.378l4.777-4.1h1.053v14.541h-1.229l-2.73-2.23-1.872-1.52H-3496Z'
-              transform='translate(3496 19964.156)'
-              fill='currentColor'
-            />
-            <ellipse
-              id='Ellipse_5'
-              data-name='Ellipse 5'
-              cx='2.337'
-              cy='2.337'
-              rx='2.337'
-              ry='2.337'
-              transform='translate(6.232 4.674)'
-              fill='currentColor'
-            />
-            <ellipse
-              id='Ellipse_6'
-              data-name='Ellipse 6'
-              cx='2.337'
-              cy='2.337'
-              rx='2.337'
-              ry='2.337'
-              transform='translate(6.232 4.674)'
-              fill='currentColor'
-            />
-          </g>
-        </svg>
-      </button>
+      {sound === true && (
+        <button
+          onClick={() => setMuted(!muted)}
+          className='home-muted-button'
+          style={{ color: fontColor }}
+        >
+          <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10.906 14.541'>
+            <g id='Group_61' data-name='Group 61' transform='translate(0)'>
+              <path
+                id='Path_2'
+                data-name='Path 2'
+                d='M-3496-19960.061h3.378l4.777-4.1h1.053v14.541h-1.229l-2.73-2.23-1.872-1.52H-3496Z'
+                transform='translate(3496 19964.156)'
+                fill='currentColor'
+              />
+              <ellipse
+                id='Ellipse_5'
+                data-name='Ellipse 5'
+                cx='2.337'
+                cy='2.337'
+                rx='2.337'
+                ry='2.337'
+                transform='translate(6.232 4.674)'
+                fill='currentColor'
+              />
+              <ellipse
+                id='Ellipse_6'
+                data-name='Ellipse 6'
+                cx='2.337'
+                cy='2.337'
+                rx='2.337'
+                ry='2.337'
+                transform='translate(6.232 4.674)'
+                fill='currentColor'
+              />
+            </g>
+          </svg>
+        </button>
+      )}
     </div>
   )
 }
