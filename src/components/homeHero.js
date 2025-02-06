@@ -20,7 +20,15 @@ const HomeHero = ({ videoId, poster, landscape, fontColor, sound }) => {
   }, [isOnScreen])
 
   return (
-    <div className='hero-container' ref={elementRef}>
+    <div
+      className='hero-container'
+      ref={elementRef}
+      style={{
+        width: '100vw',
+        height:
+          landscape === true ? 'calc(100vw * 9 / 16)' : 'calc(100vw * 16 / 9)',
+      }}
+    >
       <AnimatePresence>
         {isLoading && (
           <motion.div
