@@ -16,9 +16,9 @@ const HideOnScroll = ({ children }) => {
   }, [prevScrollPos, visible, handleScroll])
 
   return (
-    <header className={`header-logo ${visible ? 'header-show' : 'header-hide'}`}>
+    <div className={`header-logo ${visible ? 'header-show' : 'header-hide'}`}>
       {children}
-    </header>
+    </div>
   )
 }
 
