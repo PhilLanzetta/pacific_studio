@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Logo from '../images/logo.svg'
+import HideOnScroll from './hideOnScroll'
 
 const Header = ({ location }) => {
   console.log(location)
@@ -8,16 +9,14 @@ const Header = ({ location }) => {
   return (
     <header>
       <div>
-        {info ? (
-          <Link to='/'>Close</Link>
-        ) : (
-          <Link to='/info'>Information</Link>
-        )}
+        {info ? <Link to='/'>Close</Link> : <Link to='/info'>Information</Link>}
       </div>
       <div className='header-logo'>
-        <Link to='/'>
-          <img src={Logo} alt='Pacific'></img>
-        </Link>
+        <HideOnScroll>
+          <Link to='/'>
+            <img src={Logo} alt='Pacific'></img>
+          </Link>
+        </HideOnScroll>
       </div>
       <div></div>
     </header>
