@@ -9,7 +9,6 @@ const HomeTile = ({ project }) => {
   const { height, width } = useWindowSize()
   const isLandscape = height < width
   return (
-    <Fade triggerOnce>
       <div
         className={
           isLandscape ? 'featured-tile-landscape' : 'featured-tile-portrait'
@@ -54,7 +53,6 @@ const HomeTile = ({ project }) => {
           }}
         ></div>
       </div>
-    </Fade>
   )
 }
 
