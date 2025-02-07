@@ -1,7 +1,6 @@
 import React from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Fade } from 'react-awesome-reveal'
-import VideoHomeTile from './videoHomeTile'
 import useWindowSize from '../utils/useWindowSize'
 import HomeHero from './homeHero'
 
@@ -9,6 +8,7 @@ const HomeTile = ({ project }) => {
   const { height, width } = useWindowSize()
   const isLandscape = height < width
   return (
+    <Fade triggerOnce={true}>
       <div
         className={
           isLandscape ? 'featured-tile-landscape' : 'featured-tile-portrait'
@@ -53,6 +53,7 @@ const HomeTile = ({ project }) => {
           }}
         ></div>
       </div>
+    </Fade>
   )
 }
 

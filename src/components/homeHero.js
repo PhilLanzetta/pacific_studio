@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import useOnScreen from '../utils/useOnScreen'
 import ReactPlayer from 'react-player'
@@ -20,25 +19,12 @@ const HomeHero = ({ videoId, poster, landscape, fontColor, sound }) => {
   }, [isOnScreen])
 
   return (
-    <div
-      className='hero-container'
-      ref={elementRef}
-    >
-      <AnimatePresence>
-        {isLoading && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className='video-poster'
-          >
-            <GatsbyImage
-              image={poster.gatsbyImageData}
-              alt={poster.description}
-              className='poster-image'
-            ></GatsbyImage>
-          </motion.div>
-        )}
-      </AnimatePresence>
+    <div className='hero-container' ref={elementRef}>
+      <GatsbyImage
+        image={poster.gatsbyImageData}
+        alt={poster.description}
+        className={`poster-image ${!isLoading && 'fade-away'}`}
+      ></GatsbyImage>
       <div className='hero-video-container'>
         <ReactPlayer
           style={{
@@ -60,7 +46,7 @@ const HomeHero = ({ videoId, poster, landscape, fontColor, sound }) => {
           loop
           muted={muted}
           volume={1}
-          onStart={() => setIsLoading(false)}
+          onPlay={() => setIsLoading(false)}
           onError={() => setIsLoading(true)}
         ></ReactPlayer>
       </div>

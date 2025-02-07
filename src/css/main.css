@@ -1221,7 +1221,17 @@ Home
   background: #000;
 }
 
+.poster-image {
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  z-index: 10;
+  transition: all 400ms;
+}
 
+.fade-away {
+  opacity: 0;
+}
 
 .home-about-preview {
   display: flex;
@@ -1271,7 +1281,8 @@ Home
   overflow: hidden;
 }
 
-.featured-tile-portrait:hover, .featured-tile-landscape:hover {
+.featured-tile-portrait:hover,
+.featured-tile-landscape:hover {
   opacity: 1;
 }
 
@@ -1763,7 +1774,6 @@ PRESS
   justify-content: flex-end;
   font-size: var(--font-xs-resp);
 }
-
 
 .carousel-subtitle {
   font-style: italic;
