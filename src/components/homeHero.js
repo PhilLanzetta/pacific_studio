@@ -34,6 +34,7 @@ const HomeHero = ({ videoId, poster, landscape, fontColor, sound }) => {
             transform: 'translate(-50%, -50%)',
             objectFit: 'cover',
             opacity: 1,
+            zIndex: 5,
           }}
           url={`https://player.vimeo.com/video/${videoId}`}
           width={'100vw'}
