@@ -13,53 +13,48 @@ const Footer = () => {
   return (
     <footer>
       <div className='footer-link-container'>
-        <a
-          href='https://www.instagram.com/pacific_pacific'
-          target='_blank'
-          rel='noreferrer'
-        >
-          <p>
-            <em>Instagram</em>
-          </p>
-          <p>@pacific_pacific</p>
-        </a>
-        <a
-          href='https://www.linkedin.com/company/pacificpacific/'
-          target='_blank'
-          rel='noreferrer'
-        >
-          <p>
-            <em>LinkedIn</em>
-          </p>
-          <p>@pacific_pacific</p>
-        </a>
-        <button onClick={() => setEmailOpen(true)}>
-          <p>
-            <em>Newsletter</em>
-          </p>
-          <p>Sign Up</p>
+        <div>
+          <p>Office:</p>
+          <a>
+            161 Water St, Suite 2203
+            <br />
+            New York, NY 10038
+          </a>
+        </div>
+        <div>
+          <p>Contact:</p>{' '}
+          <a href='mailto:studio@pacificpacific.pub'>
+            studio@pacificpacific.pub
+          </a>{' '}
+          <br />
+          <a href='mailto:business@pacificpacific.pub'>
+            business@pacificpacific.pub
+          </a>
+        </div>
+        <div>
+          <p>Social:</p>
+          <a
+            href='https://www.instagram.com/pacific_pacific'
+            target='_blank'
+            rel='noreferrer'
+          >
+            Instagram: @pacific_pacific
+          </a>{' '}
+          <br />
+          <a
+            href='https://www.linkedin.com/company/pacificpacific/'
+            target='_blank'
+            rel='noreferrer'
+          >
+            LinkedIn: @pacific_pacific
+          </a>
+        </div>
+
+        <button onClick={() => setEmailOpen(true)} className='newsletter-button'>
+          <p>Newsletter:</p>
+          <p>Sign Up Here</p>
         </button>
-        <a href='mailto:studio@pacificpacific.pub'>
-          <p>
-            <em>Contact</em>
-          </p>
-          <p>studio@pacificpacific.pub</p>
-        </a>
-        <a href='mailto:business@pacificpacific.pub'>
-          <p>
-            <em>New Business</em>
-          </p>
-          <p>business@pacificpacific.pub</p>
-        </a>
-        <a href='https://pacificpacific.pub' target='_blank' rel='noreferrer'>
-          <p>
-            <em>Publishing</em>
-          </p>
-        </a>
-      </div>
-      <img src={Logo} alt='Pacific' className='footer-logo' />
-      <div className='bottom-footer'>
-        &copy; Pacific {new Date().getFullYear()}
+        <div>&copy; Pacific {new Date().getFullYear()}</div>
       </div>
       <div className={`email-pop-up ${emailOpen ? 'email-pop-up-show' : ''}`}>
         <div className='email-pop-up-container'>

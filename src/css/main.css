@@ -72,9 +72,9 @@
 }
 
 :root {
-  --font-primary: 'adobe-garamond-pro', serif;
-  --font-secondary: 'Neue Haas', sans-serif;
-  --font-accent: 'Silvana', serif;
+  --font-primary: 'Helvetica Neue', sans-serif;
+  --font-secondary: 'Helvetica Neue', sans-serif;
+  --font-accent: 'Helvetica Neue', serif;
   --font-xxlg-resp: clamp(36px, calc(1rem + 8.5vw), 300px);
   --font-xlg-resp: clamp(36px, calc(1rem + 5.5vw), 300px);
   --font-lg-resp: clamp(36px, calc(1rem + 2.5vw), 100px);
@@ -417,8 +417,8 @@ Footer
 */
 
 footer {
-  background: #000;
-  color: #fff;
+  background: #e3e3e3;
+  color: #000;
 }
 
 .footer-link-container {
@@ -431,7 +431,7 @@ footer {
 
 .footer-link-container a,
 .footer-link-container button {
-  text-align: center;
+  text-align: left;
   margin-bottom: var(--spacing-sm);
 }
 
@@ -531,7 +531,6 @@ Footer MEDIA
 
   .footer-link-container a,
   .footer-link-container button {
-    text-align: center;
     margin-bottom: var(--spacing-sm);
     width: calc(50% - (var(--spacing-sm) / 2));
   }
