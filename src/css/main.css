@@ -1348,6 +1348,7 @@ Home
   position: absolute;
   bottom: 3vw;
   left: 3vw;
+  z-index: 200;
   transition: all var(--fast-transition);
 }
 .home-muted-button {
