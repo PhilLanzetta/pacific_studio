@@ -419,12 +419,19 @@ Footer
 footer {
   background: #e3e3e3;
   color: #000;
+  font-size: calc(1rem - 4px);
+}
+
+footer p,
+footer a,
+footer button {
+  font-size: calc(1rem - 4px);
 }
 
 .footer-link-container {
   display: flex;
   padding: 3vw;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: var(--spacing-sm);
   flex-wrap: wrap;
 }
@@ -524,6 +531,13 @@ Footer MEDIA
 ==========
 */
 
+@media screen and (max-width: 700px) {
+  .footer-link-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
 @media screen and (max-width: 600px) {
   .footer-link-container {
     padding-top: 6vw;
@@ -2332,6 +2346,15 @@ PRODUCTS MEDIA
   gap: var(--spacing-sm);
 }
 
+.info-page {
+  background: #e3e3e3;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  z-index: -1;
+}
+
 .info-container {
   display: flex;
   margin: var(--primary-margin);
@@ -2341,11 +2364,41 @@ PRODUCTS MEDIA
 
 .info-text p {
   font-size: calc(var(--font-sm-resp) * 1.5);
+  margin-bottom: 30px;
+}
+
+.info-right-column p {
+  margin-bottom: 20px;
+}
+
+.info-horizontal-bar {
+  background: #707070;
+  height: 1px;
+  margin: var(--primary-margin);
+}
+
+.info-partners-container {
+  margin: var(--primary-margin);
+}
+
+.info-partners {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.info-caption {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.info-bio p {
+  margin-bottom: 20px;
 }
 
 .info-column {
   width: 46%;
-  font-family: 'adobe-garamond-pro', serif;
+  font-family: var(--font-primary);
   line-height: var(--lofty-line-height);
   display: flex;
   justify-content: space-between;
@@ -2408,6 +2461,11 @@ PRODUCTS MEDIA
   .info-column {
     width: 100%;
   }
+
+  .info-partners {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 80px;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -2427,6 +2485,17 @@ PRODUCTS MEDIA
 
   .talks-lectures {
     width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .info-partners {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+  .info-bio p:last-of-type {
+    margin-bottom: 60px;
   }
 }
 

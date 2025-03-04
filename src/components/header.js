@@ -8,7 +8,7 @@ const Header = ({ location }) => {
   return (
     <header>
       <div>
-        {info ? <Link to='/'>Close</Link> : <Link to='/info'>Information</Link>}
+        {info ? <Link to='/'>X</Link> : <Link to='/info'>Information</Link>}
       </div>
       <HideOnScroll>
         <Link to='/'>
