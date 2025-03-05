@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import { AnimatePresence, motion } from 'framer-motion'
 
 const Info = ({ data, location }) => {
   const {
@@ -14,17 +15,51 @@ const Info = ({ data, location }) => {
     lizBio,
     adamBio,
   } = data.contentfulAboutPage
+  const [adamPopUp, setAdamPopUp] = useState(false)
+  const [lizPopUp, setLizPopUp] = useState(false)
+
   return (
     <Layout location={location}>
       <div className='info-page'></div>
       <div className='info-container'>
         <div className='info-column info-left-column'>
-          <div
-            className='info-text'
-            dangerouslySetInnerHTML={{
-              __html: aboutText.childMarkdownRemark.html,
-            }}
-          ></div>
+          <div className='info-text'>
+            <p>
+              Pacific is an internationally recognized creative agency based in
+              New York City, led by{' '}
+              <button
+                onClick={() => setAdamPopUp(true)}
+                aria-label='open bio'
+                className='info-popup-btn'
+              >
+                Adam Turnbull
+              </button>{' '}
+              and{' '}
+              <button
+                onClick={() => setLizPopUp(true)}
+                aria-label='open bio'
+                className='info-popup-btn'
+              >
+                Elizabeth Karp-Evans
+              </button>
+              .
+            </p>
+            <p>
+              We collaborate with commercial and cultural clients across
+              disciplines and continents to design for global audiences. Our
+              team of writers, designers, developers and directors are dedicated
+              to crafting meaningful, rigorous and lasting work that engages
+              audiences and shifts culture. We embrace complexity and believe
+              purposeful creative expression has a profound ability to define
+              values and influence growth.
+            </p>{' '}
+            <p>
+              Pacific has earned accolades for its work in branding, digital
+              publishing and print design from D&AD, Art Directors Club, Type
+              Directors Club New York and the American Institute of Graphic
+              Arts.
+            </p>
+          </div>
         </div>
         <div className='info-column'>
           <div className='info-right-column'>
@@ -103,40 +138,61 @@ const Info = ({ data, location }) => {
           </div>
         </div>
       </div>
-      <div className='info-horizontal-bar'></div>
-      <div className='info-partners-container'>
-        <div className='info-text'>
-          <p>Partners</p>
-        </div>
-        <div className='info-partners'>
-          <div>
-            <GatsbyImage
-              image={lizHeadshot.gatsbyImageData}
-              alt={lizHeadshot.description}
-            ></GatsbyImage>
-            <p className='info-caption'>Photo: Ned Rogers</p>
-          </div>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: lizBio.childMarkdownRemark.html,
-            }}
-            className='info-bio'
-          ></div>
-          <div>
-            <GatsbyImage
-              image={adamHeadshot.gatsbyImageData}
-              alt={adamHeadshot.description}
-            ></GatsbyImage>
-            <p className='info-caption'>Photo: Nick Brinley</p>
-          </div>
-          <div
-            className='info-bio'
-            dangerouslySetInnerHTML={{
-              __html: adamBio.childMarkdownRemark.html,
-            }}
-          ></div>
-        </div>
-      </div>
+      <AnimatePresence>
+        {lizPopUp && (
+          <motion.div className='info-partners'>
+            <button
+              className='bio-popup-close'
+              onClick={() => setLizPopUp(false)}
+            >
+              X Close
+            </button>
+            <div></div>
+            <div>
+              <GatsbyImage
+                image={lizHeadshot.gatsbyImageData}
+                alt={lizHeadshot.description}
+              ></GatsbyImage>
+              <p className='info-caption'>Photo: Ned Rogers</p>
+            </div>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: lizBio.childMarkdownRemark.html,
+              }}
+              className='info-bio'
+            ></div>
+          </motion.div>
+        )}
+        {adamPopUp && (
+          <motion.div
+            className='info-partners'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <button
+              className='bio-popup-close'
+              onClick={() => setAdamPopUp(false)}
+            >
+              X Close
+            </button>
+            <div></div>
+            <div>
+              <GatsbyImage
+                image={adamHeadshot.gatsbyImageData}
+                alt={adamHeadshot.description}
+              ></GatsbyImage>
+              <p className='info-caption'>Photo: Nick Brinley</p>
+            </div>
+            <div
+              className='info-bio'
+              dangerouslySetInnerHTML={{
+                __html: adamBio.childMarkdownRemark.html,
+              }}
+            ></div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Layout>
   )
 }

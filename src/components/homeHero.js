@@ -21,8 +21,8 @@ const HomeHero = ({ videoId, poster, landscape, fontColor, sound }) => {
   return (
     <div className='hero-container' ref={elementRef}>
       <GatsbyImage
-        image={poster.gatsbyImageData}
-        alt={poster.description}
+        image={poster?.gatsbyImageData}
+        alt={poster?.description}
         className={`poster-image ${!isLoading && 'fade-away'}`}
       ></GatsbyImage>
       <div className='hero-video-container'>
