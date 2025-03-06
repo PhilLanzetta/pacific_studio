@@ -89,7 +89,7 @@
   --fast-transition: 400ms;
   --md-transition: 700ms;
   --slow-transition: 1.2s;
-  --primary-weight: 300;
+  --primary-weight: 400;
   --thin-weight: 100;
   --primary-line-height: 1.25;
   --body-max-width: clamp(590px, 50%, 1480px);
@@ -102,6 +102,7 @@ html {
   font-size: 18px;
   font-family: var(--font-primary);
   font-weight: var(--primary-weight);
+  -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   width: 100vw;
 }
