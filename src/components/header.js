@@ -3,12 +3,21 @@ import { Link } from 'gatsby'
 import Logo from '../images/logo.svg'
 import HideOnScroll from './hideOnScroll'
 
-const Header = ({ location }) => {
-  const info = location?.pathname === '/info/'
+const Header = ({ info, setBlack }) => {
   return (
     <header>
       <div>
-        {info ? <Link to='/'>X Close</Link> : <Link to='/info'>Information</Link>}
+        {info ? (
+          <Link
+            to='/'
+            onMouseEnter={() => setBlack(true)}
+            onMouseLeave={() => setBlack(false)}
+          >
+            X Close
+          </Link>
+        ) : (
+          <Link to='/info'>Information</Link>
+        )}
       </div>
       <HideOnScroll>
         <Link to='/'>

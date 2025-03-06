@@ -1,21 +1,23 @@
 import React, { useState } from 'react'
-import { Link } from 'gatsby'
 import { AiOutlineClose } from 'react-icons/ai'
 import MailchimpSubscribe from 'react-mailchimp-subscribe'
 import CustomForm from './customForm'
-import Logo from '../images/logo.svg'
 
 const postUrl = process.env.GATSBY_MAIL_KEY
 
-const Footer = () => {
+const Footer = ({ black }) => {
   const [emailOpen, setEmailOpen] = useState(false)
 
   return (
-    <footer>
+    <footer className={black ? 'footer-black' : 'footer'}>
       <div className='footer-link-container'>
         <div>
           <p>Office:</p>
-          <a>
+          <a
+            href='https://maps.app.goo.gl/8vXst9aKP9nn7rJu5'
+            target='_blank'
+            rel='noreferrer'
+          >
             161 Water St, Suite 2203
             <br />
             New York, NY 10038
@@ -50,7 +52,10 @@ const Footer = () => {
           </a>
         </div>
 
-        <button onClick={() => setEmailOpen(true)} className='newsletter-button'>
+        <button
+          onClick={() => setEmailOpen(true)}
+          className='newsletter-button'
+        >
           <p>Newsletter:</p>
           <p>Sign Up Here</p>
         </button>

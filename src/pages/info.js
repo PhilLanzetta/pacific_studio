@@ -7,20 +7,19 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 const Info = ({ data, location }) => {
   const {
-    aboutText,
     brandingServices,
     selectClients,
     lizHeadshot,
     adamHeadshot,
     lizBio,
     adamBio,
+    talksLectures,
   } = data.contentfulAboutPage
   const [adamPopUp, setAdamPopUp] = useState(false)
   const [lizPopUp, setLizPopUp] = useState(false)
 
   return (
     <Layout location={location}>
-      <div className='info-page'></div>
       <div className='info-container'>
         <div className='info-column info-left-column'>
           <div className='info-text'>
@@ -70,6 +69,15 @@ const Info = ({ data, location }) => {
                   <li key={index}>{service}</li>
                 ))}
               </ul>
+            </div>
+            <div>
+              <p className='info-heading'>Awards</p>
+              <ul
+                className='info-list'
+                dangerouslySetInnerHTML={{
+                  __html: talksLectures.childMarkdownRemark.html,
+                }}
+              ></ul>
             </div>
           </div>
           <div className='info-right-column'>
@@ -230,6 +238,11 @@ export const query = graphql`
       lizHeadshot {
         gatsbyImageData
         description
+      }
+      talksLectures {
+        childMarkdownRemark {
+          html
+        }
       }
     }
   }
