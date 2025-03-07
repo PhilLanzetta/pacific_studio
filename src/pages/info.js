@@ -45,7 +45,7 @@ const Info = ({ data, location }) => {
             </p>
             <p>
               We collaborate with commercial and cultural clients across
-              disciplines and continents to design for global audiences. Our
+              disciplines to design for global audiences. Our
               team of writers, designers, developers and directors are dedicated
               to crafting meaningful, rigorous and lasting work that engages
               audiences and shifts culture. We embrace complexity and believe
@@ -93,7 +93,7 @@ const Info = ({ data, location }) => {
             ></ul>
           </div>
           <div className='info-right-column'>
-            <p>
+            <p className='mobile-hide'>
               Office
               <br />
               <a
@@ -106,7 +106,7 @@ const Info = ({ data, location }) => {
                 New York, NY 10038
               </a>
             </p>
-            <p>
+            <p className='mobile-hide'>
               Contact <br />
               <a href='mailto:studio@pacificpacific.pub'>
                 studio@pacificpacific.pub
@@ -116,7 +116,7 @@ const Info = ({ data, location }) => {
                 business@pacificpacific.pub
               </a>
             </p>
-            <p>
+            <p className='mobile-hide'>
               Social <br />
               <a
                 href='https://www.instagram.com/studio__pacific'
