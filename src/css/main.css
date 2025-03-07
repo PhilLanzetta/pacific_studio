@@ -1361,12 +1361,16 @@ Home
   z-index: 200;
   transition: all var(--fast-transition);
 }
+
 .home-muted-button {
   position: absolute;
   right: 3vw;
   bottom: 3vw;
-  height: clamp(15px, 2vw, 24px);
-  width: clamp(15px, 2vw, 24px);
+  display: flex;
+  height: 30px;
+  width: 30px;
+  align-items: flex-end;
+  justify-content: flex-end;
   z-index: 100;
 }
 
@@ -1374,14 +1378,22 @@ Home
   position: absolute;
   right: 3vw;
   bottom: 3vw;
-  height: clamp(20px, 2vw, 30px);
-  width: clamp(20px, 2vw, 30px);
+  display: flex;
+  height: 30px;
+  width: 30px;
+  align-items: flex-end;
+  justify-content: flex-end;
   z-index: 100;
 }
 
-.home-muted-button svg, .home-sound-button svg {
-  height: 100%;
-  width: 100%;
+.home-muted-button svg {
+  height: clamp(15px, 2vw, 24px);
+  width: clamp(15px, 2vw, 24px);
+} 
+
+.home-sound-button svg {
+  height: clamp(20px, 2vw, 30px);
+  width: clamp(20px, 2vw, 30px);
 }
 
 .featured-tile-title {
