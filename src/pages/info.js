@@ -48,7 +48,7 @@ const Info = ({ data, location }) => {
               disciplines to design for global audiences. Our
               team of writers, designers, developers and directors are dedicated
               to crafting meaningful, rigorous and lasting work that engages
-              audiences and shifts culture. We embrace complexity and believe
+              society and shifts culture. We embrace complexity and believe
               purposeful creative expression has a profound ability to define
               values and influence growth.
             </p>{' '}
