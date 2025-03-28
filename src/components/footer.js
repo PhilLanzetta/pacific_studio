@@ -36,11 +36,11 @@ const Footer = ({ black }) => {
         <div>
           <p>Social:</p>
           <a
-            href='https://www.instagram.com/pacific_pacific'
+            href='https://www.instagram.com/pacific_studio/'
             target='_blank'
             rel='noreferrer'
           >
-            Instagram: @pacific_pacific
+            Instagram: @pacific_studio
           </a>{' '}
           <br />
           <a

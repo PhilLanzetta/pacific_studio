@@ -45,12 +45,12 @@ const Info = ({ data, location }) => {
             </p>
             <p>
               We collaborate with commercial and cultural clients across
-              disciplines to design for global audiences. Our
-              team of writers, designers, developers and directors are dedicated
-              to crafting meaningful, rigorous and lasting work that engages
-              society and shifts culture. We embrace complexity and believe
-              purposeful creative expression has a profound ability to define
-              values and influence growth.
+              disciplines to design for global audiences. Our team of writers,
+              designers, developers and directors are dedicated to crafting
+              meaningful, rigorous and lasting work that engages society and
+              shifts culture. We embrace complexity and believe purposeful
+              creative expression has a profound ability to define values and
+              influence growth.
             </p>{' '}
             <p>
               Pacific has earned accolades for its work in branding, digital
@@ -119,11 +119,11 @@ const Info = ({ data, location }) => {
             <p className='mobile-hide'>
               Social <br />
               <a
-                href='https://www.instagram.com/studio__pacific'
+                href='https://www.instagram.com/pacific_studio/'
                 target='_blank'
                 rel='noreferrer'
               >
-                Instagram: studio__pacific
+                Instagram: @pacific_studio
               </a>
               <br />
               <a
