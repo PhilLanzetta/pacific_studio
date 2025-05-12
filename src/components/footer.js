@@ -18,7 +18,7 @@ const Footer = ({ black }) => {
             target='_blank'
             rel='noreferrer'
           >
-            161 Water St, Suite 2203
+            161 Water St
             <br />
             New York, NY 10038
           </a>
