@@ -53,7 +53,7 @@ const Info = ({ data, location }) => {
               influence growth.
             </p>{' '}
             <p>
-              Pacific has earned accolades for its work in branding, digital
+              Pacific has earned accolades for its work in branding, digital,
               publishing and print design from D&AD, Art Directors Club, Type
               Directors Club New York and the American Institute of Graphic
               Arts.
