@@ -2660,3 +2660,7 @@ PRODUCTS MEDIA
   z-index: 100;
   cursor: pointer;
 }
+
+.home-page-container {
+  background: #000;
+}
